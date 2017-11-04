@@ -2,7 +2,7 @@ defmodule CodeRacing.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", CodeRacing.RoomChannel
+  channel "room:*", CodeRacing.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
