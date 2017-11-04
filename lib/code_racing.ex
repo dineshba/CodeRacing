@@ -10,6 +10,7 @@ defmodule CodeRacing do
     children = [
       # Start the endpoint when the application starts
       supervisor(CodeRacing.Endpoint, []),
+      worker(CodeRacing.RoomChannel.Stash, [["hi", "dinesh"]]),
       # Start your own worker by calling: CodeRacing.Worker.start_link(arg1, arg2, arg3)
       # worker(CodeRacing.Worker, [arg1, arg2, arg3]),
     ]
