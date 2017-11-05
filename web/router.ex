@@ -20,7 +20,9 @@ defmodule CodeRacing.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", CodeRacing do
-  #   pipe_through :api
-  # end
+  scope "/", CodeRacing do
+    pipe_through :api
+
+    resources "/challenge", ChallengesController, only: [:index]
+  end
 end
