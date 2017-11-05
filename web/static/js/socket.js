@@ -63,7 +63,7 @@ channel.join()
 
 channel.on("state_changed", payload => {
   let messageItem = document.createElement("li");
-  messageItem.innerText = payload.body
+  messageItem.innerText = `${payload.body.player_name} running with score: ${payload.body.current_challenge}`
   resultContainer.appendChild(messageItem)
 })
 
