@@ -1,5 +1,9 @@
 # CodeRacing
 
+### To Play
+  * Register by `curl -X POST -d '{"user": {"name": "yourName"}}' -H "Content-Type:application/json" localhost:4000/register`
+  * You will get a key in the above response. Use that for the successive requests
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`

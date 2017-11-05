@@ -10,6 +10,7 @@ defmodule CodeRacing.Router do
   end
 
   pipeline :api do
+    plug CodeRacing.UserKeyMatchValidator
     plug :accepts, ["json"]
   end
 
@@ -23,6 +24,7 @@ defmodule CodeRacing.Router do
   scope "/", CodeRacing do
     pipe_through :api
 
-    resources "/challenge", ChallengesController, only: [:index]
+    resources "/register", UserController, only: [:create]
+    resources "/challenges", ChallengesController, only: [:index]
   end
 end

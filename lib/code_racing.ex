@@ -12,6 +12,7 @@ defmodule CodeRacing do
       supervisor(CodeRacing.Endpoint, []),
       worker(CodeRacing.RoomChannel.Stash, [["hi", "dinesh"]]),
       worker(CodeRacing.Challenges, [[]]),
+      worker(CodeRacing.Players, [[]]),
       # Start your own worker by calling: CodeRacing.Worker.start_link(arg1, arg2, arg3)
       # worker(CodeRacing.Worker, [arg1, arg2, arg3]),
     ]
