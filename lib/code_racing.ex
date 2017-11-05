@@ -7,10 +7,14 @@ defmodule CodeRacing do
     import Supervisor.Spec
 
     # Define workers and child supervisors to be supervised
+    challenges = [%{name: "Array size", examples: ["[1,2,3] --> 3", "[] --> 0"]},
+                  %{name: "Array average", examples: ["[1,2,3] --> 2", "[] --> 0"]},
+                  %{name: "Array max", examples: ["[1,2,3] --> 3", "[] --> nil"]},
+                  %{name: "Array min", examples: ["[1,2,3] --> 1", "[] --> nil"]}]
     children = [
       # Start the endpoint when the application starts
       supervisor(CodeRacing.Endpoint, []),
-      worker(CodeRacing.Challenges, [[]]),
+      worker(CodeRacing.Challenges, [challenges]),
       worker(CodeRacing.Players, [[]]),
       # Start your own worker by calling: CodeRacing.Worker.start_link(arg1, arg2, arg3)
       # worker(CodeRacing.Worker, [arg1, arg2, arg3]),
