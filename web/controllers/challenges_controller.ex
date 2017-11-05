@@ -2,7 +2,8 @@ defmodule CodeRacing.ChallengesController do
   use CodeRacing.Web, :controller
 
   def index(conn, params) do
-    challenges = CodeRacing.Challenges.get_all
-    render(conn, "index.json", challenges: challenges)
+    %{current_challenge: current_player_challenge} = conn.assigns.current_player
+    challenge = CodeRacing.Challenges.get_challenge(current_player_challenge)
+    render(conn, "index.json", challenge: challenge)
   end
 end

@@ -15,7 +15,7 @@ defmodule CodeRacing.UserKeyMatchValidator do
       else
         required_player = CodeRacing.Players.get_by(player_name)
         if required_player != nil and required_player.key == key do
-          conn
+          Plug.Conn.assign(conn, :current_player, required_player)
         else
           conn |> send_resp(:unauthorized, "username and key mismatch") |> halt
         end

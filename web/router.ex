@@ -25,6 +25,6 @@ defmodule CodeRacing.Router do
     pipe_through :api
 
     resources "/register", UserController, only: [:create]
-    resources "/challenges", ChallengesController, only: [:index]
+    resources "/challenge", ChallengesController, only: [:index]
   end
 end
