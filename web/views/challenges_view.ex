@@ -7,6 +7,19 @@ defmodule CodeRacing.ChallengesView do
       examples: render_many(challenge.examples, CodeRacing.ExampleView, "index.json")
     }
   end
+
+  def render("input.json", %{input: input}) do
+    %{
+      input: input
+    }
+  end
+
+  def render("output.json", %{output: output}) do
+    %{
+      output: output
+    }
+  end
+  
 end
 
 defmodule CodeRacing.ExampleView do
