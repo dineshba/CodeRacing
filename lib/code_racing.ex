@@ -7,10 +7,10 @@ defmodule CodeRacing do
     import Supervisor.Spec
 
     # Define workers and child supervisors to be supervised
-    challenges = [%{name: "Array size", examples: ["[1,2,3] --> 3", "[] --> 0"], input: [1, 2, 3, 4, 5], output: 5},
-                  %{name: "Array average", examples: ["[1,2,3] --> 2", "[] --> 0"], input: [1, 2, 3, 4, 5], output: 3},
-                  %{name: "Array max", examples: ["[1,2,3] --> 3", "[] --> nil"], input: [1, 2, 3, 4, 5], output: 5},
-                  %{name: "Array min", examples: ["[1,2,3] --> 1", "[] --> nil"], input: [1, 2, 3, 4, 5], output: 1}]
+    challenges = [%{name: "Array size", examples: ["[1,2,3] --> 3", "[] --> 0"], problem_set: [%{input: [1, 2, 3, 4, 5], output: 5}, %{input: [1, 2, 3, 4, 5, 6, 7], output: 7}, %{input: [1, 2], output: 2}]},
+                  %{name: "Array average", examples: ["[1,2,3] --> 2", "[] --> 0"], problem_set: [%{input: [1, 2, 3, 4, 5], output: 3}]},
+                  %{name: "Array max", examples: ["[1,2,3] --> 3", "[] --> nil"], problem_set: [%{input: [1, 2, 3, 4, 5], output: 5}]},
+                  %{name: "Array min", examples: ["[1,2,3] --> 1", "[] --> nil"], problem_set: [%{input: [1, 2, 3, 4, 5], output: 1}]}]
     children = [
       # Start the endpoint when the application starts
       supervisor(CodeRacing.Endpoint, []),

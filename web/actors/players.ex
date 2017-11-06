@@ -23,6 +23,10 @@ defmodule CodeRacing.Players do
     GenServer.cast __MODULE__, {:increment_challenge, player}
   end
 
+  def update_problem(player, problem) do
+    GenServer.cast __MODULE__, {:update_problem, player, problem}
+  end
+
   def handle_call(:get_all, _from, current_players) do
     {:reply, current_players, current_players}
   end
@@ -41,6 +45,16 @@ defmodule CodeRacing.Players do
     current_players = current_players |> Enum.map(fn player ->
       case player.key do
         current_player_key -> increment_challenge_for(player)
+                        _  -> player
+      end
+    end)
+    {:noreply, current_players}
+  end
+
+  def handle_cast({:update_problem, %{key: current_player_key}, problem}, current_players) do
+    current_players = current_players |> Enum.map(fn player ->
+      case player.key do
+        current_player_key -> Map.put(player, :problem, problem)
                         _  -> player
       end
     end)

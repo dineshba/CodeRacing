@@ -10,14 +10,15 @@ defmodule CodeRacing.ChallengesController do
   end
 
   def input(conn, params) do
-    %{current_challenge: current_player_challenge} = conn.assigns.current_player
-    %{input: input} = CodeRacing.Challenges.get(current_player_challenge)
-    render(conn, "input.json", input: input)
+    %{current_challenge: current_player_challenge} = current_player = conn.assigns.current_player
+    %{problem_set: problems} = CodeRacing.Challenges.get(current_player_challenge)
+    random_problem = problems |> Enum.random
+    CodeRacing.Players.update_problem(current_player, random_problem)
+    render(conn, "input.json", input: random_problem.input)
   end
 
   def create(conn, %{"output" => output}) do
-    %{current_challenge: current_player_challenge} = current_player = conn.assigns.current_player
-    %{output: expected_output} = CodeRacing.Challenges.get(current_player_challenge)
+    %{problem: %{output: expected_output}} = current_player = conn.assigns.current_player
     if expected_output == output do
       CodeRacing.Players.move_to_next_challenge(current_player)
       render(conn, "output.json", output: "Success!!!... Try next one")
