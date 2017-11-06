@@ -8,6 +8,10 @@ defmodule CodeRacing.ChallengesView do
     }
   end
 
+  def render("all_challenges_done.json", _params) do
+    "You are done with all your challenges"
+  end
+
   def render("input.json", %{input: input}) do
     %{
       input: input
