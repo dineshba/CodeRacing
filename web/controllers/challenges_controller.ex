@@ -14,9 +14,10 @@ defmodule CodeRacing.ChallengesController do
   end
 
   def create(conn, %{"output" => output}) do
-    %{current_challenge: current_player_challenge} = conn.assigns.current_player
+    %{current_challenge: current_player_challenge} = current_player = conn.assigns.current_player
     %{output: expected_output} = CodeRacing.Challenges.get(current_player_challenge)
     if expected_output == output do
+      CodeRacing.Players.move_to_next_challenge(current_player)
       render(conn, "output.json", output: "Success!!!... Try next one")
     else
       render(conn, "output.json", output: "Error!!!.. Try again")

@@ -19,6 +19,10 @@ defmodule CodeRacing.Players do
     GenServer.call __MODULE__, {:get_player, player_name}
   end
 
+  def move_to_next_challenge(player) do
+    GenServer.cast __MODULE__, {:increment_challenge, player}
+  end
+
   def handle_call(:get_all, _from, current_players) do
     {:reply, current_players, current_players}
   end
@@ -31,5 +35,19 @@ defmodule CodeRacing.Players do
   def handle_call({:get_player, player_name}, _from, current_players) do
     required_player = current_players |> Enum.find(fn player -> player.name == player_name end)
     {:reply, required_player, current_players}
+  end
+
+  def handle_cast({:increment_challenge, %{key: current_player_key}}, current_players) do
+    current_players = current_players |> Enum.map(fn player ->
+      case player.key do
+        current_player_key -> increment_challenge_for(player)
+                        _  -> player
+      end
+    end)
+    {:noreply, current_players}
+  end
+
+  defp increment_challenge_for(player) do
+    Map.merge(player, %{current_challenge: 1}, fn _k, v1, v2 -> v1 + v2 end)
   end
 end
