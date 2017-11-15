@@ -2,7 +2,7 @@ defmodule CodeRacing.Players do
   use GenServer
 
   def start_link(players) do
-    GenServer.start __MODULE__, players, name: __MODULE__
+    GenServer.start_link __MODULE__, players, name: __MODULE__
   end
 
   def add(%{name: name, key: uuid}) do
