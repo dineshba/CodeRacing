@@ -7,8 +7,8 @@ defmodule CodeRacing.RoomChannel do
   end
 
   def handle_info(:after_join, socket) do
-    CodeRacing.Players.get_all |> Enum.each(fn player ->
-        push socket, "state_changed", %{body: %{player_name: player.name, current_challenge: player.current_challenge}} end)
+    # CodeRacing.Players.get_all |> Enum.each(fn player ->
+        # push socket, "state_changed", %{body: %{player_name: player.name, current_challenge: player.current_challenge}} end)
     {:noreply, socket}
   end
 

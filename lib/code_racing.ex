@@ -15,7 +15,7 @@ defmodule CodeRacing do
       # Start the endpoint when the application starts
       supervisor(CodeRacing.Endpoint, []),
       worker(CodeRacing.Challenges, [challenges]),
-      worker(CodeRacing.Players, [[]]),
+      worker(CodeRacing.PlayersSupervisor, [[]]),
       # Start your own worker by calling: CodeRacing.Worker.start_link(arg1, arg2, arg3)
       # worker(CodeRacing.Worker, [arg1, arg2, arg3]),
     ]

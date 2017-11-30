@@ -13,9 +13,12 @@ defmodule CodeRacing.UserKeyMatchValidator do
       if key == nil || player_name == nil do
         conn |> send_resp(:unauthorized, "key and/or username is missing in request headers") |> halt
       else
-        required_player = CodeRacing.Players.get_by(player_name)
-        if required_player != nil and required_player.key == key do
-          Plug.Conn.assign(conn, :current_player, required_player)
+        current_player_id = :crypto.hash(:sha256, [key, player_name])
+            |> Base.encode64
+            |> String.slice(0, 5)
+            |> String.to_atom
+        if CodeRacing.PlayersManager.is_valid(current_player_id) do
+          Plug.Conn.assign(conn, :current_player_id, current_player_id)
         else
           conn |> send_resp(:unauthorized, "username and key mismatch") |> halt
         end
