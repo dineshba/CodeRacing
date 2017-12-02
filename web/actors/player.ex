@@ -1,11 +1,11 @@
 defmodule CodeRacing.Player do
   use GenServer
 
-  def start_link(%{name: player_name,
-                    key: uuid,
-                    current_challenge: current_challenge
-                    } = state, name) do
-    GenServer.start_link __MODULE__, state, name: name
+  def start_link(%{name: _player_name,
+                    key: _uuid,
+                    current_challenge: _current_challenge
+                    } = player, name) do
+    GenServer.start_link __MODULE__, player, name: name
   end
 
   def get_details(player) do
@@ -13,7 +13,7 @@ defmodule CodeRacing.Player do
   end
 
   def update_problem(player, problem) do
-      GenServer.cast player, {:update_problem, problem}
+    GenServer.cast player, {:update_problem, problem}
   end
 
   def move_to_next_challenge(player) do

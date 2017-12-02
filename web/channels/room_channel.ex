@@ -2,7 +2,7 @@ defmodule CodeRacing.RoomChannel do
   use Phoenix.Channel
 
   def join("room:lobby", _message, socket) do
-    send(self, :after_join)
+    send(self(), :after_join)
     {:ok, socket}
   end
 
