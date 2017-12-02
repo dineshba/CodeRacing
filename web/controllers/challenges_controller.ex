@@ -4,13 +4,13 @@ defmodule CodeRacing.ChallengesController do
   plug :validate_and_populate_player
 
   def index(conn, _params) do
-    %{current_challenge: challenge_id} = conn.assigns.current_player
+    %{challenge_id: challenge_id} = conn.assigns.current_player
     challenge = CodeRacing.Challenges.get(challenge_id)
     render(conn, "index.json", challenge: challenge)
   end
 
   def input(conn, _params) do
-    %{current_challenge: challenge_id} = conn.assigns.current_player
+    %{challenge_id: challenge_id} = conn.assigns.current_player
     %{problem_set: problems} = CodeRacing.Challenges.get(challenge_id)
     random_problem = problems |> Enum.random
     CodeRacing.Player.update_problem(conn.assigns.current_player_id, Map.put(random_problem, :requested_time, DateTime.utc_now))
@@ -33,7 +33,7 @@ defmodule CodeRacing.ChallengesController do
 
   defp validate_and_populate_player(conn, _params) do
     current_player_id = conn.assigns.current_player_id
-    %{current_challenge: current_player_challenge} = current_player = CodeRacing.Player.get_details(current_player_id)
+    %{challenge_id: current_player_challenge} = current_player = CodeRacing.Player.get_details(current_player_id)
     if current_player_challenge > CodeRacing.Challenges.number_of_challenges do
       render(conn, "all_challenges_done.json") |> halt
     else

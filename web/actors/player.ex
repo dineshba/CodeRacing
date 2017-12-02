@@ -3,7 +3,7 @@ defmodule CodeRacing.Player do
 
   def start_link(%{name: _player_name,
                     key: _uuid,
-                    current_challenge: _current_challenge
+                    challenge_id: _challenge_id
                     } = player, name) do
     GenServer.start_link __MODULE__, player, name: name
   end
@@ -29,7 +29,7 @@ defmodule CodeRacing.Player do
   end
 
   def handle_cast(:increment_challenge, current_player) do
-    {:noreply, Map.merge(current_player, %{current_challenge: 1}, fn _k, v1, v2 -> v1 + v2 end)}
+    {:noreply, Map.merge(current_player, %{challenge_id: 1}, fn _k, v1, v2 -> v1 + v2 end)}
   end
 
 end

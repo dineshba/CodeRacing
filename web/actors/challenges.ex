@@ -5,8 +5,8 @@ defmodule CodeRacing.Challenges do
     GenServer.start_link(__MODULE__, challenges, name: __MODULE__)
   end
 
-  def get(challenge_number) do
-    GenServer.call __MODULE__, {:get, challenge_number}
+  def get(challenge_id) do
+    GenServer.call __MODULE__, {:get, challenge_id}
   end
 
   def number_of_challenges do
@@ -25,8 +25,8 @@ defmodule CodeRacing.Challenges do
     {:reply, Enum.count(challenges), challenges}
   end
 
-  def handle_cast({:add_new, challenge}, current_challenges) do
-    {:noreply, current_challenges ++ [challenge]}
+  def handle_cast({:add_new, challenge}, challenges) do
+    {:noreply, challenges ++ [challenge]}
   end
 
 end
