@@ -16,8 +16,10 @@ defmodule CodeRacing.Player do
     GenServer.cast player, {:update_problem, problem}
   end
 
-  def move_to_next_challenge(player) do
-    GenServer.cast player, :increment_challenge
+  def move_to_next_challenge(player_id) do
+    player = get_details(player_id)
+    CodeRacing.Endpoint.broadcast("room:lobby", "next_challenge", %{body: %{player_name: player.name, challenge_id: player.challenge_id + 1}})
+    GenServer.cast player_id, :increment_challenge
   end
 
   def handle_call(:details, _from, current_player) do

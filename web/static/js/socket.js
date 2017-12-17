@@ -61,9 +61,15 @@ channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
   .receive("error", resp => { console.log("Unable to join", resp) })
 
-channel.on("state_changed", payload => {
+channel.on("next_challenge", payload => {
+  let messageItem = document.getElementById(payload.body.player_name)
+  messageItem.innerText = `${payload.body.player_name} running with score: ${payload.body.challenge_id}`
+})
+
+channel.on("new_player", payload => {
   let messageItem = document.createElement("li");
-  messageItem.innerText = `${payload.body.player_name} running with score: ${payload.body.current_challenge}`
+  messageItem.innerText = `${payload.body.player_name} running with score: ${payload.body.challenge_id}`
+  messageItem.id = payload.body.player_name
   resultContainer.appendChild(messageItem)
 })
 

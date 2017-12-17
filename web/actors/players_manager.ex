@@ -8,12 +8,16 @@ defmodule CodeRacing.PlayersManager do
 
   def add(%{name: player_name, key: uuid}) do
     initial_challenge_id = 1
-    # CodeRacing.Endpoint.broadcast("room:lobby", "state_changed", %{body: %{player_name: name, challenge_id: initial_challenge_id}})
+    CodeRacing.Endpoint.broadcast("room:lobby", "new_player", %{body: %{player_name: player_name, challenge_id: initial_challenge_id}})
     GenServer.call __MODULE__, {:add_player, %{name: player_name, key: uuid, challenge_id: initial_challenge_id}}
   end
 
   def is_valid(player_id) do
     GenServer.call __MODULE__, {:is_valid, player_id}
+  end
+
+  def get_all do
+    GenServer.call __MODULE__, :get_all
   end
 
   def handle_call(:get_all, _from, current_players) do

@@ -1,14 +1,18 @@
 defmodule CodeRacing.RoomChannel do
   use Phoenix.Channel
 
+  alias CodeRacing.PlayersManager
+  alias CodeRacing.Player
+
   def join("room:lobby", _message, socket) do
     send(self(), :after_join)
     {:ok, socket}
   end
 
   def handle_info(:after_join, socket) do
-    # CodeRacing.Players.get_all |> Enum.each(fn player ->
-        # push socket, "state_changed", %{body: %{player_name: player.name, challenge_id: player.current_challenge}} end)
+    PlayersManager.get_all |> Enum.each(fn player_id ->
+        player = Player.get_details(player_id)
+        push socket, "new_player", %{body: %{player_name: player.name, challenge_id: player.challenge_id}} end)
     {:noreply, socket}
   end
 
