@@ -18,7 +18,7 @@ defmodule CodeRacing.Player do
 
   def move_to_next_challenge(player_id) do
     player = get_details(player_id)
-    CodeRacing.Endpoint.broadcast("code_racing:track", "next_challenge", %{body: %{player_name: player.name, challenge_id: player.challenge_id + 1}})
+    CodeRacing.Endpoint.broadcast("code_racing:track", "next_challenge", %{body: %{player_name: player.name, challenge_id: player.challenge_id + 1, key: player.key}})
     GenServer.cast player_id, :increment_challenge
   end
 

@@ -54,6 +54,8 @@ let socket = new Socket("/socket", {params: {token: window.userToken}})
 socket.connect()
 
 let resultContainer = document.querySelector("#results")
+var number_of_challenges = 0;
+var users = new Array();
 
 // Now that you are connected, you can join channels with a topic:
 let channel = socket.channel("code_racing:track", {})
@@ -61,16 +63,30 @@ channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
   .receive("error", resp => { console.log("Unable to join", resp) })
 
+channel.on("no_of_challenges", payload => {
+  number_of_challenges = payload.body.number_of_challenges
+})
+
 channel.on("next_challenge", payload => {
-  let messageItem = document.getElementById(payload.body.player_name)
-  messageItem.innerText = `${payload.body.player_name} running with score: ${payload.body.challenge_id}`
+  let index = users.findIndex(function(value) {
+    return value.id === payload.body.key
+  })
+  users[index].challenge = payload.body.challenge_id
+  update(users)
 })
 
 channel.on("new_player", payload => {
-  let messageItem = document.createElement("li");
-  messageItem.innerText = `${payload.body.player_name} running with score: ${payload.body.challenge_id}`
-  messageItem.id = payload.body.player_name
-  resultContainer.appendChild(messageItem)
+  users.push({"name": payload.body.player_name, "challenge": payload.body.challenge_id, "id": payload.body.key})
+  update(users)
 })
+
+var update = function(users) {
+  resultContainer.innerText = ""
+  users.forEach(function(user) {
+    let messageItem = document.createElement("li");
+    messageItem.innerText = `${user.name} running with score: ${user.challenge}`
+    resultContainer.appendChild(messageItem)
+  });
+}
 
 export default socket
