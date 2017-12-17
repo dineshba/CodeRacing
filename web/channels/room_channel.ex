@@ -4,7 +4,7 @@ defmodule CodeRacing.RoomChannel do
   alias CodeRacing.PlayersManager
   alias CodeRacing.Player
 
-  def join("room:lobby", _message, socket) do
+  def join("code_racing:track", _message, socket) do
     send(self(), :after_join)
     {:ok, socket}
   end
