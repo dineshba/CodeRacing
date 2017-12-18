@@ -7,10 +7,47 @@ defmodule CodeRacing do
     import Supervisor.Spec
 
     # Define workers and child supervisors to be supervised
-    challenges = [%{name: "Array size", examples: ["[1,2,3] --> 3", "[] --> 0"], problem_set: [%{input: [1, 2, 3, 4, 5], output: 5}, %{input: [1, 2, 3, 4, 5, 6, 7], output: 7}, %{input: [1, 2], output: 2}]},
-                  %{name: "Array average", examples: ["[1,2,3] --> 2", "[] --> 0"], problem_set: [%{input: [1, 2, 3, 4, 5], output: 3}]},
-                  %{name: "Array max", examples: ["[1,2,3] --> 3", "[] --> nil"], problem_set: [%{input: [1, 2, 3, 4, 5], output: 5}]},
-                  %{name: "Array min", examples: ["[1,2,3] --> 1", "[] --> nil"], problem_set: [%{input: [1, 2, 3, 4, 5], output: 1}]}]
+    challenges = [%{name: "Start silly, acceleration for the count. Given list of products, return back the count and you get a furious start",
+                    sample_input: %{"input": [%{
+      "name": "Apple iPhone 6s 128GB Space Grey Refurbished",
+      "price": 1737
+    }, %{
+    "name": "Nokia 3220",
+    "price": 999
+    }, %{
+    "name": "iBall Slide Brace-X1 Mini 16GB",
+    "price": 1737
+    },
+    %{
+      "name": "Dekor World POLKA DOT DIWAN SET- PACK OF 8 PCS",
+      "price": 786
+    }, %{
+    "name": "Swayam Yellow Colour Floral Printed Eyelet Door Curtain - Window Curtain",
+    "price": 654
+    }]},
+    sample_output: %{
+      "output": 6
+    },
+    problem_set: [%{input: [%{
+      "name": "Xiaomi Redmi 3S Prime 32GB 3GB",
+      "price": 1737
+    }, %{
+    "name": "Sennheiser CX 180 Street II In-Ear Headphone",
+    "price": 649
+    }, %{
+    "name": "Honor AP007 13000 mAH Power Bank Grey",
+    "price": 869
+    }, %{
+    "name": "Homefab India Set of 2 Royal Silky Aqua Blue Designer Curtains (HF158)",
+    "price": 629
+    }, %{
+    "name": "Homefab India Set of 2  Beautiful Marble Plain Black Curtains (HF342)",
+    "price": 499
+    }, %{
+    "name": "Set of 2 - measuring cups & measuring spoon",
+    "price": 350
+    }], output: 6}]}
+  ]
     children = [
       # Start the endpoint when the application starts
       supervisor(CodeRacing.Endpoint, []),

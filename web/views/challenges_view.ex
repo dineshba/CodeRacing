@@ -4,7 +4,8 @@ defmodule CodeRacing.ChallengesView do
   def render("index.json", %{challenge: challenge}) do
     %{
       name: challenge.name,
-      examples: render_many(challenge.examples, CodeRacing.ExampleView, "index.json")
+      sampleInput: challenge.sample_input,
+      sampleOutput: challenge.sample_output,
     }
   end
 
@@ -23,13 +24,5 @@ defmodule CodeRacing.ChallengesView do
       output: output
     }
   end
-  
-end
 
-defmodule CodeRacing.ExampleView do
-  use CodeRacing.Web, :view
-
-  def render("index.json", %{example: example}) do
-    example
-  end
 end
