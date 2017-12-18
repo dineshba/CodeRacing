@@ -82,10 +82,31 @@ channel.on("new_player", payload => {
 
 var update = function(users) {
   resultContainer.innerText = ""
+  let header = document.createElement("div");
+  let start_point = document.createElement("p");
+  start_point.innerText = "Start Point"
+  let flag_element = document.createElement("IMG");
+  flag_element.src = `/images/checkflag.png`;
+  flag_element.width = 50
+  flag_element.height = 50
+  flag_element.style.marginLeft = number_of_challenges * 100 + 'px';
+  header.appendChild(start_point)
+  header.appendChild(flag_element)
+  resultContainer.appendChild(header)
+  let count = 0
   users.forEach(function(user) {
-    let messageItem = document.createElement("li");
-    messageItem.innerText = `${user.name} running with score: ${user.challenge}`
-    resultContainer.appendChild(messageItem)
+    let user_element = document.createElement("div");
+    let user_image = document.createElement("IMG");
+    let user_name = document.createElement("div");
+    user_image.src = `/images/car${(count % 8) + 1}.png`;
+    user_image.width = 50
+    user_image.height = 50
+    count = count + 1
+    user_name.innerText = user.name
+    user_element.appendChild(user_image)
+    user_element.appendChild(user_name)
+    user_element.style.marginLeft = (user.challenge - 1) * 100 + 'px'
+    resultContainer.appendChild(user_element)
   });
 }
 
