@@ -11,7 +11,7 @@ defmodule CodeRacing.ChallengesController do
 
   def input(conn, _params) do
     %{challenge_id: challenge_id} = conn.assigns.current_player
-    %{problem_set: problems} = CodeRacing.Challenges.get(challenge_id)
+    %{inputOutputs: problems} = CodeRacing.Challenges.get(challenge_id)
     random_problem = problems |> Enum.random
     CodeRacing.Player.update_problem(conn.assigns.current_player_id, Map.put(random_problem, :requested_time, DateTime.utc_now))
     render(conn, "input.json", input: random_problem.input)
@@ -19,7 +19,8 @@ defmodule CodeRacing.ChallengesController do
 
   def create(conn, %{"output" => output}) do
     %{problem: %{output: expected_output, requested_time: requested_time}} = conn.assigns.current_player
-    validate_and_render(conn, DateTime.diff(DateTime.utc_now, requested_time) < 10, expected_output == output)
+    formatted_output = for {key, val} <- output, into: %{}, do: {String.to_atom(key), val}
+    validate_and_render(conn, DateTime.diff(DateTime.utc_now, requested_time) < 10, expected_output == formatted_output)
   end
 
   defp validate_and_render(conn, false, _), do: bad_request_with(conn, "Time out!!!.. Try again")

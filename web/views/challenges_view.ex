@@ -3,9 +3,9 @@ defmodule CodeRacing.ChallengesView do
 
   def render("index.json", %{challenge: challenge}) do
     %{
-      name: challenge.name,
-      sampleInput: challenge.sample_input,
-      sampleOutput: challenge.sample_output,
+      name: challenge.statement,
+      sampleInput: challenge.sampleInput,
+      sampleOutput: challenge.sampleOutput,
     }
   end
 

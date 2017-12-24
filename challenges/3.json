@@ -1,0 +1,97 @@
+{
+    "stage": 3,
+    "statement": "Rocking!! Money matters, so as the total value of product active.",
+    "instructions": "You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' request should not exceed 2 secs",
+    "sampleInput": {
+        "input": [{
+            "name": "Stainless Steel Cutter Peeler Tool Pineapple Seed Clip Home Kitchen Gadgets",
+            "category": "Kitchen",
+            "price": 260,
+            "startDate": "2017-01-30",
+            "endDate": "2017-04-04"
+        }, {
+            "name": "20.5cm Fruit Cutter Chef Kitchen Cutlery Knife Knives Choice - 07",
+            "category": "Kitchen",
+            "price": 149,
+            "startDate": "2017-01-30",
+            "endDate": "2017-12-04"
+        }, {
+            "name": "LETV LeEco Le 2 32GB Rose Gold",
+            "category": "Electronics",
+            "price": 1737,
+            "startDate": "2017-01-30",
+            "endDate": null
+        }, {
+            "name": "Nokia 1100",
+            "category": "Electronics",
+            "price": 999,
+            "startDate": "2018-01-30",
+            "endDate": null
+        }, {
+            "name": "Homefab India Set of 2  Beautiful Marble Plain Black Curtains (HF342)",
+            "category": "Furniture",
+            "price": 499,
+            "startDate": "2018-01-30",
+            "endDate": null
+        }]
+    },
+    "sampleOutput": {
+        "output": {
+            "totalValue": 1886
+        }
+    },
+    "inputOutputs": [{
+        "input": [{
+            "name": "Asus ABTU005 10050 mAH Power Bank Gold",
+            "category": "Electronics",
+            "price": 939,
+            "startDate": "2018-01-31",
+            "endDate": null
+        }, {
+            "name": "Xiaomi Redmi 3S Prime 32GB 3GB",
+            "category": "Electronics",
+            "price": 1737,
+            "startDate": "2017-01-31",
+            "endDate": "2017-08-27"
+        }, {
+            "name": "Sennheiser CX 180 Street II In-Ear Headphone",
+            "category": "Electronics",
+            "price": 649,
+            "startDate": "2015-01-31",
+            "endDate": "2015-09-27"
+        }, {
+            "name": "Honor AP007 13000 mAH Power Bank Grey",
+            "category": "Electronics",
+            "price": 869,
+            "startDate": "2015-11-01",
+            "endDate": "2018-11-17"
+        }, {
+            "name": "Dream Decor Premium Quality Designer Cushion Cover (12x12-inch) - Set of 5",
+            "category": "Furniture",
+            "price": 299,
+            "startDate": "2018-11-01",
+            "endDate": "2018-10-07"
+        }, {
+            "name": "10 feet Exporthub Beautiful Royal Silky Eyelet Very Very Long Door Curtain- 2PCS",
+            "category": "Furniture",
+            "price": 699,
+            "startDate": "2015-11-01",
+            "endDate": "2018-10-04"
+        }, {
+            "name": "NEW STAINLESS STEEL WATERMELON CORER,SERVER SLICER,CUTTER SPLITTER KITCHEN TOOL",
+            "category": "Kitchen",
+            "price": 259,
+            "startDate": "2015-11-01",
+            "endDate": "2016-11-17"
+        }, {
+            "name": "Heat Resistant Silicone spatula /Turners for your Kitchen",
+            "category": "Kitchen",
+            "price": 599,
+            "startDate": "2018-11-01",
+            "endDate": null
+        }],
+        "output": {
+            "totalValue": 3305
+        }
+    }]
+}

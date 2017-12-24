@@ -1,0 +1,310 @@
+{
+    "stage": 4,
+    "statement": "And the last lap, You guessed it right, all you need to get back is the total price of active products for each category",
+    "instructions": "You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' request should not exceed 2 secs",
+    "sampleInput": {
+        "input": [{
+            "name": "Stainless Steel Cutter Peeler Tool Pineapple Seed Clip Home Kitchen Gadgets",
+            "category": "Kitchen",
+            "price": 260,
+            "startDate": "2017-01-30",
+            "endDate": "2017-04-04"
+        }, {
+            "name": "20.5cm Fruit Cutter Chef Kitchen Cutlery Knife Knives Choice - 07",
+            "category": "Kitchen",
+            "price": 149,
+            "startDate": "2017-01-30",
+            "endDate": "2017-12-04"
+        }, {
+            "name": "LETV LeEco Le 2 32GB Rose Gold",
+            "category": "Electronics",
+            "price": 1737,
+            "startDate": "2017-01-30",
+            "endDate": null
+        }, {
+            "name": "Nokia 1100",
+            "category": "Electronics",
+            "price": 999,
+            "startDate": "2017-01-30",
+            "endDate": null
+        }, {
+            "name": "Homefab India Set of 2  Beautiful Marble Plain Black Curtains (HF342)",
+            "category": "Furniture",
+            "price": 499,
+            "startDate": "2018-01-30",
+            "endDate": null
+        }]
+    },
+    "sampleOutput": {
+        "output": {
+            "Kitchen": 149,
+            "Electronics": 1886
+        }
+    },
+    "inputOutputs": [{
+        "input": [{
+            "name": "Multifunction Vegetable Fruit Twister Cutter Slicer Utensil Processing Device",
+            "category": "Kitchen",
+            "price": 299,
+            "startDate": "2017-05-19",
+            "endDate": null
+        }, {
+            "name": "20cm Fruit Cutter Chef Kitchen Cutlery Knife Knives Choice - 06",
+            "category": "Kitchen",
+            "price": 149,
+            "startDate": "2017-06-25",
+            "endDate": null
+        }, {
+            "name": "STAINLESS STEEL TEA, COFFEE & LEMON STRAINER FOR HOME & OFFICE",
+            "category": "Kitchen",
+            "price": 149,
+            "startDate": "2017-09-10",
+            "endDate": null
+        }, {
+            "name": "Roops Serving Spoon 8 Pcs Set Lovely SMall RLO8A VR6311",
+            "category": "Kitchen",
+            "price": 863,
+            "startDate": "2016-05-23",
+            "endDate": "2016-09-23"
+        }, {
+            "name": "Roops Mini Serving Spoon 6 Pc Set RMI VR6313",
+            "category": "Kitchen",
+            "price": 453,
+            "startDate": "2017-05-19",
+            "endDate": "2018-08-03"
+        }, {
+            "name": "Stainless Steel Potato Waves Crinkle Cutter Slicer - Chopper French Fries Maker",
+            "category": "Kitchen",
+            "price": 215,
+            "startDate": "2017-06-25",
+            "endDate": null
+        }, {
+            "name": "Set of 2 Pc- 2 in 1 Dolphin Shape Kitchen Electronic Gas Lighter LED Torch SPARK",
+            "category": "Kitchen",
+            "price": 229,
+            "startDate": "2017-09-10",
+            "endDate": "2018-08-03"
+        }, {
+            "name": "TOP QUALITY STAINLESS STEEL APPLE / FRUIT CUTTER",
+            "category": "Kitchen",
+            "price": 199,
+            "startDate": "2016-05-23",
+            "endDate": "2018-08-03"
+        }, {
+            "name": "New Stainless Steel Mortar Pestle Kitchen Tool - Kundi Soota large",
+            "category": "Kitchen",
+            "price": 359,
+            "startDate": "2017-04-17",
+            "endDate": null
+        }, {
+            "name": "2 IN 1 GAS LIGHTER WITH LED TORCH",
+            "category": "Kitchen",
+            "price": 199,
+            "startDate": "2017-05-19",
+            "endDate": "2017-10-03"
+        }, {
+            "name": "Hand Operated Vegetable Dry Fruit & Chilly Grater",
+            "category": "Kitchen",
+            "price": 380,
+            "startDate": "2017-06-25",
+            "endDate": null
+        }, {
+            "name": "GAS LIGHTER AND KNIFE SET WITH 1 LAKH SPARKS GUARANTEED",
+            "category": "Kitchen",
+            "price": 199,
+            "startDate": "2016-05-23",
+            "endDate": "2017-10-03"
+        }, {
+            "name": "SKN Kitchen Electronic Gas Lighter stainless steel gas lighter ",
+            "category": "Kitchen",
+            "price": 159,
+            "startDate": "2017-09-10",
+            "endDate": "2018-10-03"
+        }, {
+            "name": "Roops Serving Spoon 6 pc Set Small RB1 VR6304",
+            "category": "Kitchen",
+            "price": 582,
+            "startDate": "2017-06-25",
+            "endDate": null
+        }, {
+            "name": "Dream Decor Premium Quality Designer Cushion Cover (12x12-inch) - Set of 5",
+            "category": "Furniture",
+            "price": 299,
+            "startDate": "2017-06-25",
+            "endDate": null
+        }, {
+            "name": "10 feet Exporthub Beautiful Royal Silky Eyelet Very Very Long Door Curtain- 2PCS",
+            "category": "Furniture",
+            "price": 699,
+            "startDate": "2017-05-19",
+            "endDate": "2018-10-03"
+        }, {
+            "name": "Dekor World POLKA DOT DIWAN SET- PACK OF 8 PCS",
+            "category": "Furniture",
+            "price": 1234,
+            "startDate": "2016-05-23",
+            "endDate": null
+        }, {
+            "name": "Swayam Yellow Colour Floral Printed Eyelet Door Curtain - Window Curtain",
+            "category": "Furniture",
+            "price": 1234,
+            "startDate": "2017-03-03",
+            "endDate": null
+        }, {
+            "name": "Homefab India Set of 2 Stylish Marble Black Curtains (HF343)",
+            "category": "Furniture",
+            "price": 549,
+            "startDate": "2017-09-10",
+            "endDate": null
+        }, {
+            "name": "Dekor World Circular Dori Cushion Cover (Pack of 5) - DWCC-2575",
+            "category": "Furniture",
+            "price": 599,
+            "startDate": "2017-03-03",
+            "endDate": "2018-10-03"
+        }, {
+            "name": "Homefabs 100% Cotton Double Bed Sheet with 2 Pillow Covers (DBS134)",
+            "category": "Furniture",
+            "price": 479,
+            "startDate": "2017-05-19",
+            "endDate": null
+        }, {
+            "name": "Homefabs 100% Cotton Double Bed Sheet with 2 Pillow Covers (DBS 055)",
+            "category": "Furniture",
+            "price": 499,
+            "startDate": "2016-05-23",
+            "endDate": null
+        }, {
+            "name": "Dream Decor Premium Quality Pure Cotton Double Bed Sheet with 2 Pillow Covers",
+            "category": "Furniture",
+            "price": 359,
+            "startDate": "2017-06-25",
+            "endDate": "2018-10-03"
+        }, {
+            "name": "Homefabs 100% Cotton Double Bed Sheet with 2 Pillow Covers (DBS 060)",
+            "category": "Furniture",
+            "price": 499,
+            "startDate": "2017-04-28",
+            "endDate": null
+        }, {
+            "name": "BICHONA 3D DOUBLE BED-SHEET WITH 2 PILLOW COVERS IN GIFT PACKAGING(BICHONA082)",
+            "category": "Furniture",
+            "price": 799,
+            "startDate": "2017-05-19",
+            "endDate": null
+        }, {
+            "name": "Homefabs Set of 2 100% Cotton Double Bed Sheet with 4 Pillow Covers (Combo506)",
+            "category": "Furniture",
+            "price": 899,
+            "startDate": "2018-03-02",
+            "endDate": "2018-10-03"
+        }, {
+            "name": "Dream Decor 100% Cotton Single Bed sheet with 1 pillow covers- (55X85) Inch",
+            "category": "Furniture",
+            "price": 199,
+            "startDate": "2017-08-30",
+            "endDate": null
+        }, {
+            "name": "Homefabs 100% Cotton Double Bed Sheet with 2 Pillow Covers (DBS105)",
+            "category": "Furniture",
+            "price": 499,
+            "startDate": "2017-05-19",
+            "endDate": "2018-10-03"
+        }, {
+            "name": "Dream Decor 3D Print Double Bed Sheet With 2 Pillow Covers - (3D-104)",
+            "category": "Furniture",
+            "price": 399,
+            "startDate": "2017-06-25",
+            "endDate": null
+        }, {
+            "name": "Swayam Black and Brown Colour Ethnic Print Double Bed Sheet with Pillow Covers",
+            "category": "Furniture",
+            "price": 1234,
+            "startDate": "2017-03-03",
+            "endDate": null
+        }, {
+            "name": "Buzz Lightyear Poly-Cotton Double Bed Sheet & 2 Pillow Covers For Kids Bedroom",
+            "category": "Furniture",
+            "price": 349,
+            "startDate": "2017-03-03",
+            "endDate": "2017-05-03"
+        }, {
+            "name": "Homefabs 100% Cotton Single Bed-Sheet with 1 Pillow Cover (Single128)",
+            "category": "Furniture",
+            "price": 299,
+            "startDate": "2017-03-03",
+            "endDate": null
+        }, {
+            "name": "Coolpad Note 5 32GB / 4GB RAM Gold",
+            "category": "Electronics",
+            "price": 2767,
+            "startDate": "2017-03-03",
+            "endDate": "2017-05-03"
+        }, {
+            "name": "Xiaomi Mi Max 128GB Gold",
+            "category": "Electronics",
+            "price": 17373,
+            "startDate": "2017-06-25",
+            "endDate": null
+        }, {
+            "name": "Xiaomi Mi Pad Tablet better than IPAD value for money 128 gb Expandable",
+            "category": "Electronics",
+            "price": 1737,
+            "startDate": "2018-03-02",
+            "endDate": null
+        }, {
+            "name": "Apple iPhone 6 64GB-Spacegrey",
+            "category": "Electronics",
+            "price": 83737,
+            "startDate": "2017-03-03",
+            "endDate": "2018-05-03"
+        }, {
+            "name": "BlackBerry 9360 Black",
+            "category": "Electronics",
+            "price": 23432,
+            "startDate": "2018-03-02",
+            "endDate": null
+        }, {
+            "name": "Xiaomi Redmi Note 3 32GB 3GB",
+            "category": "Electronics",
+            "price": 1231,
+            "startDate": "2017-03-03",
+            "endDate": null
+        }, {
+            "name": "Moto M 64GB 4GB Mix Color",
+            "category": "Electronics",
+            "price": 45532,
+            "startDate": "2017-09-10",
+            "endDate": null
+        }, {
+            "name": "Google chromecast 2",
+            "category": "Electronics",
+            "price": 4742,
+            "startDate": "2017-03-03",
+            "endDate": "2018-05-03"
+        }, {
+            "name": "Google Chromecast HDMI Streaming Media Player Google India Warranty",
+            "category": "Electronics",
+            "price": 1737,
+            "startDate": "2017-03-03",
+            "endDate": null
+        }, {
+            "name": "Apple iPhone 6 128GB Space grey Refurbished",
+            "category": "Electronics",
+            "price": 33773,
+            "startDate": "2017-03-03",
+            "endDate": "2018-05-03"
+        }, {
+            "name": "20000mah Mi Powerbank",
+            "category": "Electronics",
+            "price": 1737,
+            "startDate": "2017-03-03",
+            "endDate": null
+        }],
+        "output": {
+            "Kitchen": 3034,
+            "Furniture": 9131,
+            "Electronics": 144330
+        }
+    }]
+}

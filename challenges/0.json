@@ -1,0 +1,53 @@
+{
+  "stage": 0,
+  "statement": "Start silly, acceleration for the count. Given list of products, return back the count and you get a furious start",
+  "instructions": "You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' requests should not exceed 2 secs",
+  "sampleInput": {
+    "input":[{
+      "name": "Apple iPhone 6s 128GB Space Grey Refurbished",
+      "price": 1737
+    }, {
+    "name": "Nokia 3220",
+    "price": 999
+    }, {
+    "name": "iBall Slide Brace-X1 Mini 16GB",
+    "price": 1737
+    },
+    {
+      "name": "Dekor World POLKA DOT DIWAN SET- PACK OF 8 PCS",
+      "price": 786
+    }, {
+    "name": "Swayam Yellow Colour Floral Printed Eyelet Door Curtain - Window Curtain",
+    "price": 654
+    }]
+  },
+  "sampleOutput":{
+    "output":{
+      "count":5
+    }
+  },
+  "inputOutputs": [{
+    "input":[{
+      "name": "Xiaomi Redmi 3S Prime 32GB 3GB",
+      "price": 1737
+    }, {
+    "name": "Sennheiser CX 180 Street II In-Ear Headphone",
+    "price": 649
+    }, {
+    "name": "Honor AP007 13000 mAH Power Bank Grey",
+    "price": 869
+    }, {
+    "name": "Homefab India Set of 2 Royal Silky Aqua Blue Designer Curtains (HF158)",
+    "price": 629
+    }, {
+    "name": "Homefab India Set of 2  Beautiful Marble Plain Black Curtains (HF342)",
+    "price": 499
+    }, {
+    "name": "Set of 2 - measuring cups & measuring spoon",
+    "price": 350
+    }],
+    "output":{
+      "count": 6
+    }
+  }]
+}
