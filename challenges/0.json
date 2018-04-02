@@ -1,53 +1,116 @@
 {
-  "stage": 0,
-  "statement": "Start silly, acceleration for the count. Given list of products, return back the count and you get a furious start",
+  "statement": "Can you please help in calculating the price of the given cart with list of products",
   "instructions": "You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' requests should not exceed 2 secs",
   "sampleInput": {
-    "input":[{
-      "name": "Apple iPhone 6s 128GB Space Grey Refurbished",
-      "price": 1737
-    }, {
-    "name": "Nokia 3220",
-    "price": 999
-    }, {
-    "name": "iBall Slide Brace-X1 Mini 16GB",
-    "price": 1737
+    "input": {
+      "name": "Cart for breakfast",
+      "products":[
+        {
+          "name": "Apple",
+          "price": 60,
+          "count": 1
+        },
+        {
+          "name": "Milk",
+          "price": 25,
+          "count": 1
+        },
+        {
+          "name": "Maggie",
+          "price": 15,
+          "count": 3
+        },
+        {
+          "name": "Water melon",
+          "price": 48,
+          "count": 1
+        },
+        {
+          "name": "Meat",
+          "price": 200,
+          "count": 1
+        }
+     ]
+    }
+  },
+  "sampleOutput": {
+    "output": {
+      "amount": 378
+    }
+  },
+  "inputOutputs": [
+    {
+      "input": {
+        "name": "Cart for dinner",
+        "products": [
+          {
+            "name": "Apple",
+            "price": 50,
+            "count": 1
+          },
+          {
+            "name": "Milk",
+            "price": 45,
+            "count": 1
+          },
+          {
+            "name": "Maggie",
+            "price": 25,
+            "count": 3
+          },
+          {
+            "name": "Water melon",
+            "price": 48,
+            "count": 1
+          },
+          {
+            "name": "Meat",
+            "price": 200,
+            "count": 2
+          },
+          {
+            "name": "Fish",
+            "price": 250,
+            "count": 1
+          }
+        ]
+    },
+      "output": {
+        "amount": 868
+      }
     },
     {
-      "name": "Dekor World POLKA DOT DIWAN SET- PACK OF 8 PCS",
-      "price": 786
-    }, {
-    "name": "Swayam Yellow Colour Floral Printed Eyelet Door Curtain - Window Curtain",
-    "price": 654
-    }]
-  },
-  "sampleOutput":{
-    "output":{
-      "count":5
+      "input": {
+        "name": "Cart for lunch",
+        "products": [{
+          "name": "Apple",
+          "price": 50,
+          "count": 1
+        },
+        {
+          "name": "Milk",
+          "price": 45,
+          "count": 3
+        },
+        {
+          "name": "Maggie",
+          "price": 25,
+          "count": 1
+        },
+        {
+          "name": "Water melon",
+          "price": 48,
+          "count": 1
+        },
+        {
+          "name": "Fish",
+          "price": 250,
+          "count": 1
+        }
+      ]},
+      "output": {
+        "amount": 508
+      }
     }
-  },
-  "inputOutputs": [{
-    "input":[{
-      "name": "Xiaomi Redmi 3S Prime 32GB 3GB",
-      "price": 1737
-    }, {
-    "name": "Sennheiser CX 180 Street II In-Ear Headphone",
-    "price": 649
-    }, {
-    "name": "Honor AP007 13000 mAH Power Bank Grey",
-    "price": 869
-    }, {
-    "name": "Homefab India Set of 2 Royal Silky Aqua Blue Designer Curtains (HF158)",
-    "price": 629
-    }, {
-    "name": "Homefab India Set of 2  Beautiful Marble Plain Black Curtains (HF342)",
-    "price": 499
-    }, {
-    "name": "Set of 2 - measuring cups & measuring spoon",
-    "price": 350
-    }],
-    "output":{
-      "count": 6
-    }
-  }]
+  ]
 }

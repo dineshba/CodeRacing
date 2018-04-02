@@ -1,91 +1,239 @@
 {
-    "stage": 1,
-    "statement": "Giant leap !! easier step, next. Product now has startDate and endDate to specify when it is active. endData null tells the product is active for ever from the startDate. The startDate and endDate are inclusive. 'POST' the count of products which are active today",
-    "instructions": "You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' request should not exceed 2 secs",
+    "statement": "Can you please help in finding the number of coupons for each product based on category",
+    "instructions": "You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' requests should not exceed 2 secs",
     "sampleInput": {
-        "input": [{
-            "name": "Stainless Steel Cutter Peeler Tool Pineapple Seed Clip Home Kitchen Gadgets",
-            "category": "Kitchen",
-            "price": 260,
-            "startDate": "2017-01-30",
-            "endDate": "2017-04-04"
-        }, {
-            "name": "20.5cm Fruit Cutter Chef Kitchen Cutlery Knife Knives Choice - 07",
-            "category": "Kitchen",
-            "price": 149,
-            "startDate": "2017-01-30",
-            "endDate": "2017-12-04"
-        }, {
-            "name": "LETV LeEco Le 2 32GB Rose Gold",
-            "category": "Electronics",
-            "price": 1737,
-            "startDate": "2017-01-30",
-            "endDate": null
-        }, {
-            "name": "Nokia 1100",
-            "category": "Electronics",
-            "price": 999,
-            "startDate": "2018-01-30",
-            "endDate": null
-        }]
+        "input": {
+            "name": "Cart for breakfast",
+            "products": [
+                {
+                    "name": "Apple",
+                    "price": 60,
+                    "category": "Fresh"
+                },
+                {
+                    "name": "Milk",
+                    "price": 25,
+                    "category": "Dairy"
+                },
+                {
+                    "name": "Maggie",
+                    "price": 15,
+                    "category": "Snacks"
+                },
+                {
+                    "name": "Water melon",
+                    "price": 48,
+                    "category": "Fresh"
+                },
+                {
+                    "name": "Meat",
+                    "price": 200,
+                    "category": "Deli"
+                }
+            ],
+            "coupons": [
+                {
+                    "name": "Save 5% on fresh items",
+                    "offer": "5%",
+                    "category": "Fresh"
+                },
+                {
+                    "name": "20% offer on Dariy products",
+                    "offer": "20%",
+                    "category": "Dairy"
+                },
+                {
+                    "name": "2% offer on each and every snack you pick",
+                    "offer": "2%",
+                    "category": "Snacks"
+                },
+                {
+                    "name": "Special offer on Deli this week",
+                    "offer": "35%",
+                    "category": "Deli"
+                },
+                {
+                    "name": "Weekend offers",
+                    "offer": "35%",
+                    "category": "Dairy"
+                }
+            ]
+        }
     },
     "sampleOutput": {
         "output": {
-            "count": "2"
+            "products": [
+                {
+                    "name": "Apple",
+                    "couponCount": 1
+                },
+                {
+                    "name": "Milk",
+                    "couponCount": 2
+                },
+                {
+                    "name": "Maggie",
+                    "couponCount": 1
+                },
+                {
+                    "name": "Water melon",
+                    "couponCount": 1
+                },
+                {
+                    "name": "Meat",
+                    "couponCount": 1
+                }
+            ]
         }
     },
-    "inputOutputs": [{
-        "input": [{
-            "name": "Asus ABTU005 10050 mAH Power Bank Gold",
-            "category": "Electronics",
-            "price": 939,
-            "startDate": "2018-01-31",
-            "endDate": null
-        }, {
-            "name": "Xiaomi Redmi 3S Prime 32GB 3GB",
-            "category": "Electronics",
-            "price": 1737,
-            "startDate": "2017-01-31",
-            "endDate": "2017-08-27"
-        }, {
-            "name": "Sennheiser CX 180 Street II In-Ear Headphone",
-            "category": "Electronics",
-            "price": 649,
-            "startDate": "2015-01-31",
-            "endDate": "2015-09-27"
-        }, {
-            "name": "Honor AP007 13000 mAH Power Bank Grey",
-            "category": "Electronics",
-            "price": 869,
-            "startDate": "2015-11-01",
-            "endDate": "2018-11-17"
-        }, {
-            "name": "Dream Decor Premium Quality Designer Cushion Cover (12x12-inch) - Set of 5",
-            "category": "Furniture",
-            "price": 299,
-            "startDate": "2015-11-01",
-            "endDate": "2018-10-07"
-        }, {
-            "name": "10 feet Exporthub Beautiful Royal Silky Eyelet Very Very Long Door Curtain- 2PCS",
-            "category": "Furniture",
-            "price": 699,
-            "startDate": "2015-11-01",
-            "endDate": "2018-10-04"
-        }, {
-            "name": "NEW STAINLESS STEEL WATERMELON CORER,SERVER SLICER,CUTTER SPLITTER KITCHEN TOOL",
-            "category": "Kitchen",
-            "price": 259,
-            "startDate": "2015-11-01",
-            "endDate": "2016-11-17"
-        }, {
-            "name": "Heat Resistant Silicone spatula /Turners for your Kitchen",
-            "category": "Kitchen",
-            "price": 599,
-            "startDate": "2015-11-01",
-            "endDate": null
-        }],
-        "output": {
-            "count": 5
+    "inputOutputs": [
+        {
+            "input": {
+                "name": "Cart for dinner",
+                "products": [
+                    {
+                        "name": "Apple",
+                        "price": 60,
+                        "category": "Fresh"
+                    },
+                    {
+                        "name": "Milk",
+                        "price": 25,
+                        "category": "Dairy"
+                    },
+                    {
+                        "name": "Water melon",
+                        "price": 48,
+                        "category": "Fresh"
+                    },
+                    {
+                        "name": "Meat",
+                        "price": 200,
+                        "category": "Deli"
+                    }
+                ],
+                "coupons": [
+                    {
+                        "name": "Save 5% on fresh items",
+                        "offer": "5%",
+                        "category": "Fresh"
+                    },
+                    {
+                        "name": "20% offer on Dariy products",
+                        "offer": "20%",
+                        "category": "Dairy"
+                    },
+                    {
+                        "name": "2% offer on each and every fresh you pick",
+                        "offer": "2%",
+                        "category": "Fresh"
+                    },
+                    {
+                        "name": "Special offer on Deli this week",
+                        "offer": "35%",
+                        "category": "Deli"
+                    },
+                    {
+                        "name": "Weekend offers",
+                        "offer": "35%",
+                        "category": "Dairy"
+                    }
+                ]
+            },
+            "output": {
+                "products": [
+                {
+                    "name": "Apple",
+                    "couponCount": 2
+                },
+                {
+                    "name": "Milk",
+                    "couponCount": 2
+                },
+                {
+                    "name": "Water melon",
+                    "couponCount": 2
+                },
+                {
+                    "name": "Meat",
+                    "couponCount": 1
+                }
+            ]
+            }
+        },
+        {
+            "input": {
+                "name": "Cart for Lunch",
+                "products": [
+                    {
+                        "name": "Apple",
+                        "price": 60,
+                        "category": "Fresh"
+                    },
+                    {
+                        "name": "Maggie",
+                        "price": 25,
+                        "category": "Snack"
+                    },
+                    {
+                        "name": "Water melon",
+                        "price": 48,
+                        "category": "Fresh"
+                    },
+                    {
+                        "name": "Meat",
+                        "price": 200,
+                        "category": "Deli"
+                    }
+                ],
+                "coupons": [
+                    {
+                        "name": "Save 5% on fresh items",
+                        "offer": "5%",
+                        "category": "Fresh"
+                    },
+                    {
+                        "name": "20% offer on Dariy products",
+                        "offer": "20%",
+                        "category": "Dairy"
+                    },
+                    {
+                        "name": "2% offer on each and every fresh you pick",
+                        "offer": "2%",
+                        "category": "Fresh"
+                    },
+                    {
+                        "name": "Special offer on Deli this week",
+                        "offer": "35%",
+                        "category": "Deli"
+                    },
+                    {
+                        "name": "Weekend offers",
+                        "offer": "35%",
+                        "category": "Dairy"
+                    }
+                ]
+            },
+            "output": {
+                "products": [
+                    {
+                        "name": "Apple",
+                        "couponCount": 2
+                    },
+                    {
+                        "name": "Maggie",
+                        "couponCount": 0
+                    },
+                    {
+                        "name": "Water melon",
+                        "couponCount": 2
+                    },
+                    {
+                        "name": "Meat",
+                        "couponCount": 1
+                    }
+                ]
+            }
         }
-    }]
+    ]
 }
