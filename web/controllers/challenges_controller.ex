@@ -20,7 +20,7 @@ defmodule CodeRacing.ChallengesController do
   def create(conn, %{"output" => output}) do
     %{problem: %{output: expected_output, requested_time: requested_time}} = conn.assigns.current_player
     formatted_output = for {key, val} <- output, into: %{}, do: {String.to_atom(key), val}
-    validate_and_render(conn, DateTime.diff(DateTime.utc_now, requested_time) < 10, Poison.encode(expected_output) == Poison.encode(formatted_output))
+    validate_and_render(conn, DateTime.diff(DateTime.utc_now, requested_time) =< 2, Poison.encode(expected_output) == Poison.encode(formatted_output))
   end
 
   defp validate_and_render(conn, false, _), do: bad_request_with(conn, "Time out!!!.. Try again")
