@@ -13,6 +13,13 @@ defmodule CodeRacing.Challenges do
     GenServer.call __MODULE__, :number_of_challenges
   end
 
+  def refresh do
+    {:ok, challenges_files} = File.ls("challenges")
+    challenges = challenges_files
+                  |> Enum.map(fn file -> get_json("challenges/#{file}") end)
+    GenServer.cast __MODULE__, {:refresh, challenges}
+  end
+
   def add(%{challenge: challenge}) do
     GenServer.cast __MODULE__, {:add_new, challenge}
   end
@@ -27,6 +34,15 @@ defmodule CodeRacing.Challenges do
 
   def handle_cast({:add_new, challenge}, challenges) do
     {:noreply, challenges ++ [challenge]}
+  end
+
+  def handle_cast({:refresh, new_challenges}, challenges) do
+    {:noreply, new_challenges}
+  end
+
+  defp get_json(filename) do
+    with {:ok, body} <- File.read(filename),
+         {:ok, json} <- Poison.decode(body, keys: :atoms), do: json
   end
 
 end
