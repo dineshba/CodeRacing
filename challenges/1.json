@@ -1,6 +1,6 @@
 {
-    "statement": "Can you please help in finding the number of coupons for each product based on category",
-    "instructions": "You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' requests should not exceed 2 secs",
+    "statement": "You are given with the list of products and coupons. Can you please help in finding the number of coupons for each product based on category",
+    "instructions": "1. You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' requests should not exceed 2 secs 2. Order of response should be same as products order 3. couponCount should be an integer",
     "sampleInput": {
         "input": {
             "name": "Cart for breakfast",

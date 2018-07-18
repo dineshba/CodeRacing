@@ -1,6 +1,6 @@
 {
   "statement": "Can you please help in calculating the price of the given cart with list of products",
-  "instructions": "You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' requests should not exceed 2 secs",
+  "instructions": "1. You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' requests should not exceed 2 secs 2. Price should be an integer",
   "sampleInput": {
     "input": {
       "name": "Cart for breakfast",

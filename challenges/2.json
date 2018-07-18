@@ -1,6 +1,6 @@
 {
-    "statement": "Can you please help in calculating the price of the given cart with list of products with best coupons applied",
-    "instructions": "You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' requests should not exceed 2 secs",
+    "statement": "You are given with the list of products and coupons. Can you please help in calculating the price of the given cart with list of products with best coupons applied",
+    "instructions": "1. You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' requests should not exceed 2 secs 2. amount should be float with 2 digits after dot",
     "sampleInput": {
         "input": {
             "name": "Cart for breakfast",
@@ -146,6 +146,11 @@
                         "name": "Meat",
                         "price": 200,
                         "category": "Deli"
+                    },
+                    {
+                        "name": "Lemon",
+                        "price": 10.20,
+                        "category": "Fresh"
                     }
                 ],
                 "coupons": [
@@ -177,7 +182,7 @@
                 ]
             },
             "output": {
-                "amount": 227.62
+                "amount": 267.29
             }
         }
     ]

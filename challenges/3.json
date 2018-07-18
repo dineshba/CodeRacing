@@ -1,10 +1,10 @@
 {
-    "statement": "Can you please help in calculating the price of a requested receipe where the ingredients list for a receipe is given",
+    "statement": "Can you please help in calculating the best price(with maximum offer by applying coupon) of a requested receipe where the ingredients list for a receipe is given",
     "instructions": "You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' requests should not exceed 2 secs",
     "sampleInput": {
         "input": {
             "name": "Lemon rice",
-            "Ingredients": [
+            "ingredients": [
                 "Lemon",
                 "Onion",
                 "Rice"
@@ -12,81 +12,153 @@
             "products": [
                 {
                     "name": "Lemon",
-                    "price": 60
+                    "price": 60,
+                    "category": "Fresh"
                 },
                 {
                     "name": "Curd",
-                    "price": 25
+                    "price": 25,
+                    "category": "Dairy"
                 },
                 {
                     "name": "Onion",
-                    "price": 15
+                    "price": 15,
+                    "category": "Fresh"
                 },
                 {
                     "name": "Tomato",
-                    "price": 48
+                    "price": 48,
+                    "category": "Fresh"
                 },
                 {
                     "name": "Rice",
-                    "price": 200
+                    "price": 200,
+                    "category": "Grocery"
                 },
                 {
                     "name": "Potato",
-                    "price": 48
+                    "price": 48,
+                    "category": "Fresh"
+                }
+            ],
+            "coupons": [
+                {
+                    "name": "Save 5% on fresh items",
+                    "offer": "5%",
+                    "category": "Fresh"
+                },
+                {
+                    "name": "20% offer on Dariy products",
+                    "offer": "20%",
+                    "category": "Dairy"
+                },
+                {
+                    "name": "2% offer on each and every snack you pick",
+                    "offer": "2%",
+                    "category": "Snacks"
+                },
+                {
+                    "name": "Special offer on Grocery this week",
+                    "offer": "35%",
+                    "category": "Grocery"
+                },
+                {
+                    "name": "Weekend offers",
+                    "offer": "35%",
+                    "category": "Dairy"
                 }
             ]
         }
     },
     "sampleOutput": {
         "output": {
-            "amount": 275
+            "amount": 201.25
         }
     },
     "inputOutputs": [
         {
             "input": {
                 "name": "Curd rice with finger chips",
-                "Ingredients": [
+                "ingredients": [
                     "Curd",
                     "Onion",
                     "Rice",
-                    "Potato"
+                    "Potato",
+                    "Oil"
                 ],
                 "products": [
                     {
                         "name": "Lemon",
-                        "price": 60
+                        "price": 60,
+                        "category": "Fresh"
                     },
                     {
                         "name": "Curd",
-                        "price": 25
+                        "price": 25,
+                        "category": "Dairy"
                     },
                     {
                         "name": "Onion",
-                        "price": 15
+                        "price": 15,
+                        "category": "Fresh"
                     },
                     {
                         "name": "Tomato",
-                        "price": 48
+                        "price": 48,
+                        "category": "Fresh"
                     },
                     {
                         "name": "Rice",
-                        "price": 200
+                        "price": 200,
+                        "category": "Grocery"
                     },
                     {
                         "name": "Potato",
-                        "price": 48
+                        "price": 48,
+                        "category": "Fresh"
+                    },
+                    {
+                        "name": "Oil",
+                        "price": 10.25,
+                        "category": "Oil"
+                    }
+                ],
+                "coupons": [
+                    {
+                        "name": "Save 5% on fresh items",
+                        "offer": "5%",
+                        "category": "Fresh"
+                    },
+                    {
+                        "name": "20% offer on Dariy products",
+                        "offer": "20%",
+                        "category": "Dairy"
+                    },
+                    {
+                        "name": "2% offer on each and every snack you pick",
+                        "offer": "2%",
+                        "category": "Snacks"
+                    },
+                    {
+                        "name": "Special offer on Grocery this week",
+                        "offer": "35%",
+                        "category": "Grocery"
+                    },
+                    {
+                        "name": "Weekend offers",
+                        "offer": "35%",
+                        "category": "Dairy"
                     }
                 ]
             },
             "output": {
-                "amount": 288
+                "amount": 216.35
             }
         },
         {
             "input": {
                 "name": "Tomato rice",
-                "Ingredients": [
+                "ingredients": [
                     "Tomato",
                     "Onion",
                     "Rice"
@@ -94,32 +166,65 @@
                 "products": [
                     {
                         "name": "Lemon",
-                        "price": 60
+                        "price": 60,
+                        "category": "Fresh"
                     },
                     {
                         "name": "Curd",
-                        "price": 25
+                        "price": 25,
+                        "category": "Dairy"
                     },
                     {
                         "name": "Onion",
-                        "price": 15
+                        "price": 15,
+                        "category": "Fresh"
                     },
                     {
                         "name": "Tomato",
-                        "price": 48
+                        "price": 48,
+                        "category": "Fresh"
                     },
                     {
                         "name": "Rice",
-                        "price": 200
+                        "price": 200,
+                        "category": "Grocery"
                     },
                     {
                         "name": "Potato",
-                        "price": 48
+                        "price": 48,
+                        "category": "Fresh"
+                    }
+                ],
+                "coupons": [
+                    {
+                        "name": "Save 5% on fresh items",
+                        "offer": "5%",
+                        "category": "Fresh"
+                    },
+                    {
+                        "name": "20% offer on Dariy products",
+                        "offer": "20%",
+                        "category": "Dairy"
+                    },
+                    {
+                        "name": "2% offer on each and every snack you pick",
+                        "offer": "2%",
+                        "category": "Snacks"
+                    },
+                    {
+                        "name": "Special offer on Grocery this week",
+                        "offer": "35%",
+                        "category": "Grocery"
+                    },
+                    {
+                        "name": "Weekend offers",
+                        "offer": "35%",
+                        "category": "Dairy"
                     }
                 ]
             },
             "output": {
-                "amount": 263
+                "amount": 189.85
             }
         }
     ]
