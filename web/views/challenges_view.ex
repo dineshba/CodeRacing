@@ -3,7 +3,8 @@ defmodule CodeRacing.ChallengesView do
 
   def render("index.json", %{challenge: challenge}) do
     %{
-      name: challenge.statement,
+      statement: challenge.statement,
+      instructions: challenge.instructions,
       sampleInput: challenge.sampleInput,
       sampleOutput: challenge.sampleOutput,
     }
