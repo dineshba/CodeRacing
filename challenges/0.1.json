@@ -30,7 +30,7 @@
     },
     "sampleOutput": {
         "output": {
-            "amount": 5
+            "count": 5
         }
     },
     "inputOutputs": [
@@ -65,7 +65,7 @@
                 ]
             },
             "output": {
-                "amount": 6
+                "count": 6
             }
         },
         {
@@ -91,7 +91,7 @@
                 ]
             },
             "output": {
-                "amount": 4
+                "count": 4
             }
         }
     ]
