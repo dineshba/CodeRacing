@@ -1,5 +1,5 @@
 {
-    "statement": "Welcome to Groceries App. Let's get started with simple help. Can you please help in calculating the number of products for a given Cart",
+    "statement": "Welcome to Groceries App. Let's get started with simple problem. Can you calculate the number of products for a given Cart",
     "instructions": "You can 'GET' the input from http://host:port/challenge/input and output should be 'POST' json to http://host:port/challenge/output. Importan note: The time between request 'GET' input and 'POST' requests should not exceed 2 secs",
     "sampleInput": {
         "input": {
